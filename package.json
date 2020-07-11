@@ -34,5 +34,25 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{css,scss,md}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
   }
 }
