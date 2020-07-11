@@ -7,11 +7,8 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "craco": "0.0.3",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
     "node-sass": "^4.14.1",
     "postcss-short": "^5.0.0",
-    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
@@ -53,6 +50,9 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.4.0"
+    "eslint": "^7.4.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
   }
 }
