@@ -44,8 +44,15 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,css,scss,md}": [
+    "src/**/*.{css,scss,md}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint",
       "prettier --write"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0"
   }
 }
