@@ -1,6 +1,8 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.scss'
+import React from "react";
+import logo from "./logo.svg";
+import "./App.scss";
+
+const logo = "dsfd";
 
 function App() {
   return (
@@ -14,12 +16,13 @@ function App() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           Learn React
         </a>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
