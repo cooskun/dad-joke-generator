@@ -1,0 +1,66 @@
+:global {
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+:local {
+  .scene {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    color: #fff;
+    background-color: #2da286;
+  }
+
+  .text {
+    width: 80vw;
+
+    align-self: center;
+    text-align: left;
+    font-size: 3.6rem;
+
+    position: relative;
+    z-index: 1;
+
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .icon {
+    color: #144327;
+    font-size: 26rem;
+
+    -short-position: absolute 0;
+    margin: auto;
+
+    opacity: 0.6;
+    transition: opacity 0.2s ease-out;
+
+    animation: rotate 1s linear infinite paused;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .iconAnimation {
+    animation-play-state: running;
+  }
+
+  .waves {
+    width: 100%;
+    pointer-events: none;
+    -short-position: absolute _ _ 0 0;
+  }
+}
