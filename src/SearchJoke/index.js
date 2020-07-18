@@ -33,6 +33,11 @@ const SearchJoke = () => {
     e.preventDefault();
     setFinalTerm(term);
     search();
+
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
   };
 
   return (

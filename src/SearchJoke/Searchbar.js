@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
+import anime from "animejs";
 import classnames from "classnames";
 import styles from "./Searchbar.module.scss";
-import anime from "animejs";
 import { animationConfig } from "./utils";
 
 const Searchbar = ({ onSubmit, onChange }) => {
   const formClasses = classnames(styles.form, "js-anime-search-form");
   const effectClasses = classnames(styles.effect, "js-anime-wave-effect");
 
-  const timeline = anime.timeline(animationConfig.timelineBase);
-
   useEffect(() => {
+    const timeline = anime.timeline(animationConfig.timelineBase);
+
     timeline
       .add(animationConfig.waveEffectForward)
       .add(animationConfig.formEffectForward, "-=400");
-  }, [timeline]);
+  }, []);
 
   return (
     <div className={styles.scene}>
