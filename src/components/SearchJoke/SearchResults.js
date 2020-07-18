@@ -1,12 +1,9 @@
 import React from 'react'
-import classnames from 'classnames'
 import styles from './SearchResults.module.scss'
 
 const Wrapper = ({ children }) => {
-  const classes = classnames(styles.results, 'js-anime-search-form')
-
   return (
-    <div className={classes}>
+    <div className={styles.results}>
       <div className={styles.container}>{children}</div>
     </div>
   )
