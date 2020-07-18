@@ -1,44 +1,44 @@
-import React, { useState } from "react";
-import Searchbar from "./Searchbar";
-import SearchToggle from "./SearchToggle";
-import SearchResults from "./SearchResults";
+import React, { useState } from 'react'
+import Searchbar from './Searchbar'
+import SearchToggle from './SearchToggle'
+import SearchResults from './SearchResults'
 
-import anime from "animejs";
-import styles from "./index.module.scss";
-import { animationConfig } from "./lib";
-import { useSearchedJokes } from "../../service";
+import anime from 'animejs'
+import styles from './index.module.scss'
+import { animationConfig } from './lib'
+import { useSearchedJokes } from '../../service'
 
 const SearchJoke = () => {
-  const [term, setTerm] = useState("");
-  const [finalTerm, setFinalTerm] = useState("");
-  const [enabled, setEnabled] = useState(false);
-  const { results, search } = useSearchedJokes(finalTerm);
+  const [term, setTerm] = useState('')
+  const [finalTerm, setFinalTerm] = useState('')
+  const [enabled, setEnabled] = useState(false)
+  const { results, search } = useSearchedJokes(finalTerm)
 
-  const enableSearchArea = () => setEnabled(true);
+  const enableSearchArea = () => setEnabled(true)
 
   const disableSearchArea = () => {
     const timeline = anime.timeline({
       ...animationConfig.timelineBase,
       complete: () => setEnabled(false),
-    });
+    })
 
     timeline
       .add(animationConfig.formEffectBackward)
-      .add(animationConfig.waveEffectBackward, "-=200");
-  };
+      .add(animationConfig.waveEffectBackward, '-=200')
+  }
 
-  const handleChange = (e) => setTerm(e.target.value);
+  const handleChange = e => setTerm(e.target.value)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFinalTerm(term);
-    search();
+  const handleSubmit = e => {
+    e.preventDefault()
+    setFinalTerm(term)
+    search()
 
     window.scrollTo({
       top: window.innerHeight,
-      behavior: "smooth",
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
 
   return (
     <div>
@@ -54,7 +54,7 @@ const SearchJoke = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default SearchJoke;
+export default SearchJoke

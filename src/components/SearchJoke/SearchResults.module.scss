@@ -4,7 +4,7 @@
     @apply relative text-left py-16 min-h-screen bg-secondary;
 
     &::before {
-      content: "";
+      content: '';
       @apply w-full h-full;
       @apply absolute top-0 left-0 z-0;
       @apply opacity-50 bg-custom-white;
