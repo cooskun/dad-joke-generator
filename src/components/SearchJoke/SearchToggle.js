@@ -1,7 +1,7 @@
-import React from "react";
-import { FaTimes } from "react-icons/fa";
-import { GoSearch } from "react-icons/go";
-import styles from "./SearchToggle.module.scss";
+import React from 'react'
+import { FaTimes } from 'react-icons/fa'
+import { GoSearch } from 'react-icons/go'
+import styles from './SearchToggle.module.scss'
 
 const SearchToggle = ({ enable, onClick }) => {
   return (
@@ -12,7 +12,7 @@ const SearchToggle = ({ enable, onClick }) => {
         <GoSearch onClick={onClick} className={styles.icon} />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default SearchToggle;
+export default SearchToggle

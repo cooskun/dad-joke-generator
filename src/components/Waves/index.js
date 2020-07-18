@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Waves = ({ ...props }) => {
   return (
@@ -6,8 +6,7 @@ const Waves = ({ ...props }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1280 287"
       fill="none"
-      {...props}
-    >
+      {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -16,7 +15,7 @@ const Waves = ({ ...props }) => {
         fillOpacity="0.5"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default Waves;
+export default Waves
