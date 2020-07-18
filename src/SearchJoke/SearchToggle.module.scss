@@ -1,15 +1,12 @@
 :local {
   .toggler {
     size: 7rem;
-    border-radius: 50%;
-    z-index: 20;
-    -short-position: fixed 2rem 2rem _ _;
-    background: #8ec4e9;
     @apply flex items-center justify-center;
+    @apply bg-secondary rounded-full;
+    @apply fixed top-0 right-0 mt-8 mr-8 z-20;
   }
 
   .icon {
-    color: #fff;
-    font-size: 4rem;
+    @apply text-white text-6xl;
   }
 }
