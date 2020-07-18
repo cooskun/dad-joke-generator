@@ -16,9 +16,6 @@ module.exports = {
       opacity: {
         "60": ".6",
       },
-      rotate: {
-        "360": "360deg",
-      },
       width: {
         "9/10": "90%",
       },
