@@ -41,7 +41,7 @@ const SearchJoke = () => {
   }
 
   return (
-    <div>
+    <>
       <SearchToggle
         enable={enabled}
         onClick={enabled ? disableSearchArea : enableSearchArea}
@@ -53,7 +53,7 @@ const SearchJoke = () => {
           <SearchResults results={results} />
         </div>
       )}
-    </div>
+    </>
   )
 }
 
