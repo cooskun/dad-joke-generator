@@ -1,15 +1,3 @@
-:global {
-  @keyframes rotate {
-    from {
-      @apply rotate-0;
-    }
-
-    to {
-      @apply rotate-360;
-    }
-  }
-}
-
 :local {
   .scene {
     @apply min-h-screen text-white bg-primary;
@@ -39,5 +27,15 @@
   .waves {
     @apply w-full pointer-events-none text-custom-white;
     @apply absolute bottom-0 left-0 z-20;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
