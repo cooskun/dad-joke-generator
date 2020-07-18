@@ -1,6 +1,6 @@
 import useSWR from "swr";
 
-const GET_RANDOM_JOKE = "https://icanhazdadjoke.com/";
+const BASE_URL = "https://icanhazdadjoke.com";
 
 const fetcher = (url) =>
   fetch(url, {
@@ -10,12 +10,24 @@ const fetcher = (url) =>
   }).then((res) => res.json());
 
 export const useRandomJoke = () => {
-  const { data, error, mutate } = useSWR(GET_RANDOM_JOKE, fetcher);
+  const { data, error, mutate } = useSWR(BASE_URL, fetcher);
 
   return {
     joke: data?.joke,
     loading: !data?.joke && !error,
     error: error,
-    refresh: () => mutate(GET_RANDOM_JOKE),
+    refresh: () => mutate(BASE_URL),
+  };
+};
+
+export const useSearchedJokes = (searchTerm) => {
+  const url = `${BASE_URL}/search?term=${searchTerm}`;
+  const { data, error, mutate } = useSWR(url, fetcher);
+
+  return {
+    results: data?.results ?? [],
+    loading: !data?.results?.length > 0 && !error,
+    error: error,
+    search: () => mutate(url),
   };
 };

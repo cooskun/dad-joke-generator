@@ -1,0 +1,42 @@
+:local {
+  .results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: left;
+    min-height: 100vh;
+    background-color: #8ec4e9;
+    padding: 4rem _;
+
+    &::before {
+      content: "";
+      size: 100%;
+      z-index: 0;
+      -short-position: absolute 0 _ _ 0;
+      background-color: #e0f3ff;
+      opacity: 0.5;
+    }
+  }
+
+  .resultItem {
+    color: #6f706f;
+    font-size: 3.6rem;
+    line-height: 1.4;
+    padding-bottom: 1.2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+      border-bottom: 1px solid #6f706f;
+    }
+  }
+
+  .container {
+    display: block;
+    width: 90vw;
+    margin: _ auto;
+    position: relative;
+    z-index: 1;
+  }
+}
