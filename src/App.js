@@ -1,6 +1,6 @@
 import React from "react";
-import RandomJoke from "./RandomJoke";
-import SearchJoke from "./SearchJoke";
+import RandomJoke from "./components/RandomJoke";
+import SearchJoke from "./components/SearchJoke";
 
 function App() {
   return (

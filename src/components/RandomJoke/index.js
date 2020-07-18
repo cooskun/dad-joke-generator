@@ -4,7 +4,7 @@ import { FaSyncAlt } from "react-icons/fa";
 
 import Waves from "../Waves";
 import styles from "./index.module.scss";
-import { useRandomJoke } from "../service";
+import { useRandomJoke } from "../../service";
 
 const RandomJoke = ({ ...props }) => {
   const { joke, loading, error, refresh } = useRandomJoke();

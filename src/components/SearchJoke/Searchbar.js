@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import anime from "animejs";
 import classnames from "classnames";
 import styles from "./Searchbar.module.scss";
-import { animationConfig } from "./utils";
+import { animationConfig } from "./lib";
 
 const Searchbar = ({ onSubmit, onChange }) => {
   const formClasses = classnames(styles.form, "js-anime-search-form");

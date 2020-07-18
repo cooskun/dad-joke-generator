@@ -5,8 +5,8 @@ import SearchResults from "./SearchResults";
 
 import anime from "animejs";
 import styles from "./index.module.scss";
-import { animationConfig } from "./utils";
-import { useSearchedJokes } from "../service";
+import { animationConfig } from "./lib";
+import { useSearchedJokes } from "../../service";
 
 const SearchJoke = () => {
   const [term, setTerm] = useState("");
