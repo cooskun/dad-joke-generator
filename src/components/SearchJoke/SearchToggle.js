@@ -4,7 +4,7 @@ import { FaTimes } from 'react-icons/fa'
 import { GoSearch } from 'react-icons/go'
 import styles from './SearchToggle.module.scss'
 
-const SearchToggle = ({ onExit }) => {
+const SearchToggle = ({ exitAnimation }) => {
   return (
     <div className={styles.toggler}>
       <Switch>
@@ -15,7 +15,7 @@ const SearchToggle = ({ onExit }) => {
         </Route>
 
         <Route path="/search">
-          <FaTimes onClick={onExit} className={styles.icon} />
+          <FaTimes onClick={exitAnimation} className={styles.icon} />
         </Route>
       </Switch>
     </div>

@@ -16,7 +16,7 @@ const SearchJoke = () => {
   const [finalTerm, setFinalTerm] = useState('')
   const { results, search } = useSearchedJokes(finalTerm)
 
-  const closeSearchArea = () => {
+  const exitSearchArea = () => {
     const timeline = anime.timeline({
       ...animationConfig.timelineBase,
       complete: () => history.push('/'),
@@ -42,7 +42,7 @@ const SearchJoke = () => {
 
   return (
     <>
-      <SearchToggle onExit={closeSearchArea} />
+      <SearchToggle exitAnimation={exitSearchArea} />
 
       <Route path="/search">
         <div className={styles.wrapper}>
