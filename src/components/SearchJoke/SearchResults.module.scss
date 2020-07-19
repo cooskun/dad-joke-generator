@@ -12,7 +12,11 @@
   }
 
   .resultItem {
-    @apply pb-5 text-custom-gray text-3-6 leading-snug;
+    @apply pb-5 text-custom-gray text-4xl leading-snug;
+
+    @screen md {
+      @apply text-3-6;
+    }
 
     &:not(:last-child) {
       @apply mb-10 border-b border-solid border-custom-gray text-custom-gray;

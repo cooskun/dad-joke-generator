@@ -6,8 +6,12 @@
 
   .text {
     width: 80vw;
-    @apply self-center text-left text-3-6;
+    @apply self-center text-left text-4xl;
     @apply relative z-10 pointer-events-none select-none;
+
+    @screen md {
+      @apply text-3-6;
+    }
   }
 
   .icon {
