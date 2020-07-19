@@ -1,25 +1,25 @@
 import React, { useState } from 'react'
+import { Route, useHistory } from 'react-router-dom'
+import anime from 'animejs'
+
 import Searchbar from './Searchbar'
 import SearchToggle from './SearchToggle'
 import SearchResults from './SearchResults'
 
-import anime from 'animejs'
 import styles from './index.module.scss'
 import { animationConfig } from './lib'
 import { useSearchedJokes } from '../../service'
 
 const SearchJoke = () => {
+  const history = useHistory()
   const [term, setTerm] = useState('')
   const [finalTerm, setFinalTerm] = useState('')
-  const [enabled, setEnabled] = useState(false)
   const { results, search } = useSearchedJokes(finalTerm)
 
-  const enableSearchArea = () => setEnabled(true)
-
-  const disableSearchArea = () => {
+  const exitSearchArea = () => {
     const timeline = anime.timeline({
       ...animationConfig.timelineBase,
-      complete: () => setEnabled(false),
+      complete: () => history.push('/'),
     })
 
     timeline
@@ -42,17 +42,14 @@ const SearchJoke = () => {
 
   return (
     <>
-      <SearchToggle
-        enable={enabled}
-        onClick={enabled ? disableSearchArea : enableSearchArea}
-      />
+      <SearchToggle exitAnimation={exitSearchArea} />
 
-      {enabled && (
+      <Route path="/search">
         <div className={styles.wrapper}>
           <Searchbar onChange={handleChange} onSubmit={handleSubmit} />
           <SearchResults results={results} />
         </div>
-      )}
+      </Route>
     </>
   )
 }
