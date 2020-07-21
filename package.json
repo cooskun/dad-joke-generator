@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "craco": "0.0.3",
+    "cypress": "^4.12.0",
     "eslint": "^6.8.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
@@ -29,7 +30,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy:dev": "cypress open --env env=dev",
+    "cy:prod": "cypress open --env env=prod"
   },
   "eslintConfig": {
     "extends": "react-app"

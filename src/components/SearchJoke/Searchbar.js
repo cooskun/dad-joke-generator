@@ -5,7 +5,12 @@ import styles from './Searchbar.module.scss'
 import { animationConfig } from './lib'
 
 const Searchbar = ({ onSubmit, onChange }) => {
-  const formClasses = classnames(styles.form, 'js-anime-search-form')
+  const formClasses = classnames(
+    styles.form,
+    'js-anime-search-form',
+    'cy-search-form'
+  )
+  const inputClasses = classnames(styles.input, 'cy-searchbar')
   const effectClasses = classnames(styles.effect, 'js-anime-wave-effect')
 
   useEffect(() => {
@@ -25,7 +30,7 @@ const Searchbar = ({ onSubmit, onChange }) => {
           type="text"
           onChange={onChange}
           placeholder="Search..."
-          className={styles.input}
+          className={inputClasses}
         />
       </form>
     </div>

@@ -1,0 +1,10 @@
+{
+	"env": {
+		"dev": {
+			"url": "http://localhost:3000"
+		},
+		"prod": {
+			"url": "https://jokerdad.netlify.app"
+		}
+	}
+}
