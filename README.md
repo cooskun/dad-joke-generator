@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Joker Dad
+
+## Bootstrapping
+
+Project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+[CRACO](https://github.com/gsoft-inc/craco) was used to extend Create React App's config without ejecting.
 
 ## Available Scripts
 
