@@ -12,7 +12,8 @@
   }
 
   .resultItem {
-    @apply pb-5 text-custom-gray text-4xl leading-snug;
+    font-size: rfs(3.6rem);
+    @apply pb-5 text-custom-gray leading-snug;
 
     @screen md {
       @apply text-3-6;
