@@ -6,7 +6,8 @@
 
   .text {
     width: 80vw;
-    @apply self-center text-left text-4xl;
+    font-size: rfs(3.6rem);
+    @apply self-center text-left;
     @apply relative z-10 pointer-events-none select-none;
 
     @screen md {
