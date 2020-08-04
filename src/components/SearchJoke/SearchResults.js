@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 import styles from './SearchResults.module.scss'
 
 const Wrapper = ({ children }) => {
@@ -10,10 +11,16 @@ const Wrapper = ({ children }) => {
 }
 
 const SearchResults = ({ results }) => {
+  const itemClasses = classnames(styles.resultItem, 'cy-search-result-item')
+  const noResultClasses = classnames(
+    styles.resultItem,
+    'cy-search-no-result-item'
+  )
+
   if (!results.length) {
     return (
       <Wrapper>
-        <p className={styles.resultItem}>
+        <p className={noResultClasses}>
           No found any joke belongs your search term!
         </p>
       </Wrapper>
@@ -23,7 +30,7 @@ const SearchResults = ({ results }) => {
   return (
     <Wrapper>
       {results.map(result => (
-        <p key={result.id} className={styles.resultItem}>
+        <p key={result.id} className={itemClasses}>
           {result.joke}
         </p>
       ))}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Route, useHistory } from 'react-router-dom'
 import anime from 'animejs'
+import classnames from 'classnames'
 
 import Searchbar from './Searchbar'
 import SearchToggle from './SearchToggle'
@@ -15,6 +16,8 @@ const SearchJoke = () => {
   const [term, setTerm] = useState('')
   const [finalTerm, setFinalTerm] = useState('')
   const { results, search } = useSearchedJokes(finalTerm)
+
+  const wrapperClasses = classnames(styles.wrapper, 'cy-search-section')
 
   const exitSearchArea = () => {
     const timeline = anime.timeline({
@@ -45,7 +48,7 @@ const SearchJoke = () => {
       <SearchToggle exitAnimation={exitSearchArea} />
 
       <Route path="/search">
-        <div className={styles.wrapper}>
+        <div className={wrapperClasses}>
           <Searchbar onChange={handleChange} onSubmit={handleSubmit} />
           <SearchResults results={results} />
         </div>

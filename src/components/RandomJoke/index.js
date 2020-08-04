@@ -9,18 +9,18 @@ import { useRandomJoke } from '../../service'
 const RandomJoke = ({ ...props }) => {
   const { joke, loading, error, refresh } = useRandomJoke()
 
-  const sceneClassNames = classnames(styles.scene, props.className)
-
-  const iconClassNames = classnames(styles.icon, {
+  const jokeClasses = classnames(styles.text, 'cy-joke')
+  const sceneClasses = classnames(styles.scene, props.className)
+  const iconClasses = classnames(styles.icon, 'cy-refresh-joke', {
     [styles.iconAnimation]: loading,
   })
 
   if (error) return <p>Failed to load!</p>
 
   return (
-    <div className={sceneClassNames}>
-      <p className={styles.text}>{joke ?? ''}</p>
-      <FaSyncAlt className={iconClassNames} onClick={refresh} />
+    <div className={sceneClasses}>
+      <p className={jokeClasses}>{joke ?? ''}</p>
+      <FaSyncAlt className={iconClasses} onClick={refresh} />
       <Waves className={styles.waves} />
     </div>
   )
