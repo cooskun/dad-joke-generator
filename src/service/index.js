@@ -1,18 +1,7 @@
 import useSWR from 'swr'
 
-const BASE_URL = 'https://icanhazdadjoke.com'
-
-const fetcher = url =>
-  fetch(url, {
-    headers: {
-      Accept: 'application/json',
-    },
-  }).then(res => res.json())
-
 export const useRandomJoke = () => {
-  const { data, error, mutate } = useSWR(BASE_URL, fetcher, {
-    revalidateOnFocus: false,
-  })
+  const { data, error, mutate } = useSWR('/')
 
   return {
     data: data?.joke,
@@ -23,10 +12,9 @@ export const useRandomJoke = () => {
 }
 
 export const useSearchedJokes = searchTerm => {
-  const url = `${BASE_URL}/search?term=${searchTerm}`
-  const { data, error } = useSWR(searchTerm ? url : null, fetcher, {
-    revalidateOnFocus: false,
-  })
+  const { data, error } = useSWR(
+    searchTerm ? `/search?term=${searchTerm}` : null
+  )
 
   return {
     data: data?.results ?? [],
