@@ -49,7 +49,10 @@ const SearchJoke = () => {
       <Route path="/search">
         <div className={wrapperClasses}>
           <Searchbar onChange={handleChange} onSubmit={handleSubmit} />
-          <SearchResults results={data} />
+          <SearchResults
+            results={data}
+            feedbackMessage={!finalTerm && 'Type something to find a joke'}
+          />
         </div>
       </Route>
     </>
