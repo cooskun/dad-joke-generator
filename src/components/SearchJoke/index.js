@@ -15,7 +15,7 @@ const SearchJoke = () => {
   const history = useHistory()
   const [term, setTerm] = useState('')
   const [finalTerm, setFinalTerm] = useState('')
-  const { results, search } = useSearchedJokes(finalTerm)
+  const { data } = useSearchedJokes(finalTerm)
 
   const wrapperClasses = classnames(styles.wrapper, 'cy-search-section')
 
@@ -35,7 +35,6 @@ const SearchJoke = () => {
   const handleSubmit = e => {
     e.preventDefault()
     setFinalTerm(term)
-    search()
 
     window.scrollTo({
       top: window.innerHeight,
@@ -50,7 +49,7 @@ const SearchJoke = () => {
       <Route path="/search">
         <div className={wrapperClasses}>
           <Searchbar onChange={handleChange} onSubmit={handleSubmit} />
-          <SearchResults results={results} />
+          <SearchResults results={data} />
         </div>
       </Route>
     </>

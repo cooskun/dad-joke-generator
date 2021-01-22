@@ -7,7 +7,7 @@ import styles from './index.module.scss'
 import { useRandomJoke } from '../../service'
 
 const RandomJoke = ({ ...props }) => {
-  const { joke, loading, error, refresh } = useRandomJoke()
+  const { data, loading, error, mutate } = useRandomJoke()
 
   const jokeClasses = classnames(styles.text, 'cy-joke')
   const sceneClasses = classnames(styles.scene, props.className)
@@ -19,8 +19,8 @@ const RandomJoke = ({ ...props }) => {
 
   return (
     <div className={sceneClasses}>
-      <p className={jokeClasses}>{joke ?? ''}</p>
-      <FaSyncAlt className={iconClasses} onClick={refresh} />
+      <p className={jokeClasses}>{data ?? ''}</p>
+      <FaSyncAlt className={iconClasses} onClick={mutate} />
       <Waves className={styles.waves} />
     </div>
   )

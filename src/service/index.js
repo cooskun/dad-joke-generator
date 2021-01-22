@@ -10,24 +10,27 @@ const fetcher = url =>
   }).then(res => res.json())
 
 export const useRandomJoke = () => {
-  const { data, error, mutate } = useSWR(BASE_URL, fetcher)
+  const { data, error, mutate } = useSWR(BASE_URL, fetcher, {
+    revalidateOnFocus: false,
+  })
 
   return {
-    joke: data?.joke,
+    data: data?.joke,
     loading: !data?.joke && !error,
     error: error,
-    refresh: () => mutate(BASE_URL),
+    mutate,
   }
 }
 
 export const useSearchedJokes = searchTerm => {
   const url = `${BASE_URL}/search?term=${searchTerm}`
-  const { data, error, mutate } = useSWR(url, fetcher)
+  const { data, error } = useSWR(searchTerm ? url : null, fetcher, {
+    revalidateOnFocus: false,
+  })
 
   return {
-    results: data?.results ?? [],
+    data: data?.results ?? [],
     loading: !data?.results?.length > 0 && !error,
     error: error,
-    search: () => mutate(url),
   }
 }
