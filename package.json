@@ -14,7 +14,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "rfs": "^9.0.3",
-    "swr": "^0.2.3",
+    "swr": "^0.4.0",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {

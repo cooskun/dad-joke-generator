@@ -10,12 +10,20 @@ const Wrapper = ({ children }) => {
   )
 }
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, feedbackMessage }) => {
   const itemClasses = classnames(styles.resultItem, 'cy-search-result-item')
   const noResultClasses = classnames(
     styles.resultItem,
     'cy-search-no-result-item'
   )
+
+  if (feedbackMessage) {
+    return (
+      <Wrapper>
+        <p className={noResultClasses}>{feedbackMessage}</p>
+      </Wrapper>
+    )
+  }
 
   if (!results.length) {
     return (
